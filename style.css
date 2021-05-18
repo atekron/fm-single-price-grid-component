@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(var(--light-gray), var(--light-gray));
+}
+
+.container {
+  margin: auto;
+  /* padding: 1rem; */
+  max-width: 375px;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
+
+section {
+  padding: 1.5rem;
+}
+
+.call {
+  background-color: white;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.call h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--cyan);
+  margin: 1rem 0;
+}
+
+.highlighted {
+  color: var(--bright-yellow);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.call p:nth-of-type(2) {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--cyan);
+  margin-bottom: 1rem;
+}
+
+.price {
+  background-color: var(--cyan);
+  color: white;
+}
+
+.price h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.price p:nth-of-type(1) {
+  color: var(--light-gray);
+  margin-bottom: 1rem;
+}
+
+.price p:nth-of-type(2) {
+  margin-bottom: 1rem;
+}
+
+.price button {
+  width: 100%;
+  color: white;
+  background-color: var(--bright-yellow);
+  border: 0 solid transparent;
+  border-radius: 0.3rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.price button:hover {
+  color: var(--cyan);
+  background-color: white;
+}
+
+.price button:active {
+  box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.price span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  padding-right: 1rem;
+}
+
+.description {
+  background-color: var(--grayish-blue);
+  color: white;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.description h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+.description p {
+  color: var(--light-gray);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+@media screen and (min-width: 960px) {
+  .container {
+    background-color: aquamarine;
+    min-width: 45rem;
+    min-height: 20rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "c c"
+      "p d";
+  }
+
+  .call {
+    grid-area: c;
+    padding: 2rem;
+  }
+
+  .price {
+    grid-area: p;
+    border-radius: 0 0 0 0.5rem;
+    padding: 2rem;
+  }
+
+  .price button {
+    margin-top: 0.5rem;
+  }
+
+  .description {
+    grid-area: d;
+    border-radius: 0 0 0.5rem 0;
+    padding: 2rem;
+    padding-left: 3rem;
+  }
+}
